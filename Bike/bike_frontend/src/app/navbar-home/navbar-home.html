@@ -1,0 +1,32 @@
+<!-- ✅ This NAVBAR is shared across all pages -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">BikeTaxi</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/bikes">Display</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Navbar (top) — already present -->
+
+<!-- Home content, visible only on `/` -->
+<div *ngIf="isHomePage" class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="text-center">
+    <h2>Welcome to Faster Bike Taxi</h2>
+    <p>Join the fastest and most reliable bike taxi service!</p>
+    <button class="btn btn-primary mt-3" routerLink="/apply"> Apply Now</button>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <h2 class="mb-4 fw-bold text-success">
+    <i class="bi bi-card-list"></i> Bike Applications
+  </h2>
+
+  <table class="table table-hover table-bordered shadow-sm">
+    <thead class="table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Bike Number</th>
+        <th>Age</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bike of bikeApplications">
+        <td>{{ bike.name }}</td>
+        <td>{{ bike.bikenumber }}</td>
+        <td>{{ bike.age }}</td>
+        <td>{{ bike.phonenumber }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="bikeApplications.length === 0" class="text-center text-muted mt-4">
+    No bike applications found.
+  </div>
+</div>
