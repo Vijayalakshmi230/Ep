@@ -28,3 +28,14 @@
   </form>
 </div>
 
+<!-- ✅ Success Popup Modal -->
+<div *ngIf="showSuccess" 
+     class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
+     style="background-color: rgba(0, 0, 0, 0.5); z-index: 1050;">
+  <div class="bg-white p-4 rounded shadow text-center" style="width: 300px;">
+    <h5 class="mb-3">Employee added successfully!</h5>
+    <button class="btn btn-success" (click)="closePopup()">OK</button>
+  </div>
+</div>
+
+
