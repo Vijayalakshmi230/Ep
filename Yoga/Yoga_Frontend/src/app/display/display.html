@@ -1,0 +1,28 @@
+<div class="container mt-5 p-4 bg-light rounded shadow">
+  <h3 class="text-center mb-4">Submitted Yoga Instructor Applications</h3>
+
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark text-center">
+      <tr>
+        <th>Name</th>
+        <th>Certification</th>
+        <th>Yoga Specialty</th>
+        <th>Class Preference</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let instructor of instructors">
+        <td>{{ instructor.name }}</td>
+        <td>{{ instructor.certification }}</td>
+        <td>{{ instructor.yogaSpecialty }}</td>
+        <td>{{ instructor.classPreference }}</td>
+        <td>{{ instructor.phoneNumber }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="instructors.length === 0" class="alert alert-warning text-center">
+    No instructor applications found.
+  </div>
+</div>

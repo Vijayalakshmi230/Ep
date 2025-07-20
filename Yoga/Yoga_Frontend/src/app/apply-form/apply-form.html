@@ -1,0 +1,61 @@
+<div class="container mt-5 p-4 bg-light rounded shadow" style="max-width: 650px;">
+  <h3 class="text-center mb-4">Apply to Become a Yoga Instructor</h3>
+
+  <form [formGroup]="applyForm" (ngSubmit)="onSubmit()">
+
+    <!-- Name Field -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input id="name" type="text" class="form-control" formControlName="name" />
+      <div class="text-danger" *ngIf="applyForm.get('name')?.touched && applyForm.get('name')?.invalid">
+        Name is required
+      </div>
+    </div>
+
+    <!-- Certification Field -->
+    <div class="mb-3">
+      <label for="certification" class="form-label">Certification</label>
+      <input id="certification" type="text" class="form-control" formControlName="certification" />
+      <div class="text-danger" *ngIf="applyForm.get('certification')?.touched && applyForm.get('certification')?.invalid">
+        Certification is required
+      </div>
+    </div>
+
+    <!-- Yoga Specialty Field -->
+    <div class="mb-3">
+      <label for="yogaSpecialty" class="form-label">Yoga Specialty</label>
+      <input id="yogaSpecialty" type="text" class="form-control" formControlName="yogaSpecialty" />
+      <div class="text-danger" *ngIf="applyForm.get('yogaSpecialty')?.touched && applyForm.get('yogaSpecialty')?.invalid">
+        Yoga Specialty is required
+      </div>
+    </div>
+
+    <!-- Class Preference Field -->
+    <div class="mb-3">
+      <label for="classPreference" class="form-label">Class Preference</label>
+      <input id="classPreference" type="text" class="form-control" formControlName="classPreference" />
+      <div class="text-danger" *ngIf="applyForm.get('classPreference')?.touched && applyForm.get('classPreference')?.invalid">
+        Class Preference is required
+      </div>
+    </div>
+
+    <!-- Phone Number Field -->
+    <div class="mb-3">
+      <label for="phoneNumber" class="form-label">Phone Number</label>
+      <input id="phoneNumber" type="text" class="form-control" formControlName="phoneNumber" />
+      <div class="text-danger" *ngIf="applyForm.get('phoneNumber')?.touched && applyForm.get('phoneNumber')?.hasError('required')">
+        Phone Number is required
+      </div>
+      <div class="text-danger" *ngIf="applyForm.get('phoneNumber')?.touched && applyForm.get('phoneNumber')?.hasError('pattern')">
+        Invalid Phone Number format
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+
+    <div *ngIf="successMessage" class="alert alert-success mt-3 text-center">
+      {{ successMessage }}
+    </div>
+  </form>
+</div>
